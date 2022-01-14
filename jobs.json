@@ -1,0 +1,50 @@
+[ 
+    {
+        "id": 1,
+        "title": "Backend Developer",
+        "type": "Remote",
+        "responsabilities": [
+            "Implement front-end code with low-fidelity wireframes as guidance", 
+            "Develop new user-facing features, coordinating with backend REST API developers and stakeholders",
+            "Maintain and expand test coverage in front-end code",
+            "Maintain consistency of user experience and design language"
+        ],
+        "necessary skills": [
+            "Vue.js",
+            "Webpack",
+            "CSS/SCSS",
+            "REST experience",
+            "Ability to craft visually consistent and intuitive components",
+            "Eye for design and user experience"
+        ],
+        "nice to have": [
+            "Vuetify experience",
+            "Cyprus test suite",
+            "Python or Django experience"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "Frontend Developer",
+        "type": "Remote",
+        "responsabilities": [
+            "Implement front-end code with low-fidelity wireframes as guidance", 
+            "Develop new user-facing features, coordinating with backend REST API developers and stakeholders",
+            "Maintain and expand test coverage in front-end code",
+            "Maintain consistency of user experience and design language"
+        ],
+        "necessary skills": [
+            "Vue.js",
+            "Webpack",
+            "CSS/SCSS",
+            "REST experience",
+            "Ability to craft visually consistent and intuitive components",
+            "Eye for design and user experience"
+        ],
+        "nice to have": [
+            "Vuetify experience",
+            "Cyprus test suite",
+            "Python or Django experience"
+        ]
+    }
+]

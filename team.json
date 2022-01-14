@@ -1,0 +1,80 @@
+[ 
+{
+    "id": 1,
+    "name": "Pacha",
+    "position": "CEO",
+    "img": "" 
+},
+{
+    "id": 2,
+    "name": "Church",
+    "position": "CTO",
+    "img": "" 
+},
+{
+    "id": 3,
+    "name": "Chule",
+    "position": "Product Designer",
+    "img": "" 
+},
+{
+    "id": 4,
+    "name": "Leito",
+    "position": "",
+    "img": "" 
+},
+{
+    "id": 5,
+    "name": "Nacho 1",
+    "position": "",
+    "img": "" 
+},
+{
+    "id": 6,
+    "name": "Nacho 2",
+    "position": "",
+    "img": "" 
+},
+{
+    "id": 7,
+    "name": "Dieguito",
+    "position": "",
+    "img": "" 
+},
+{
+    "id": 8,
+    "name": "Nico",
+    "position": "",
+    "img": "" 
+},
+{
+    "id": 9,
+    "name": "Angel",
+    "position": "",
+    "img": "" 
+},
+{
+    "id": 10,
+    "name": "Ani",
+    "position": "UX-UI Designer",
+    "img": "" 
+},
+{
+    "id": 11,
+    "name": "Fede",
+    "position": "Frontend Developer",
+    "img": "" 
+},
+{
+    "id": 12,
+    "name": "Lean",
+    "position": "Backend Developer",
+    "img": "" 
+},
+{
+    "id": 13,
+    "name": "Osky",
+    "position": "",
+    "img": "" 
+}
+]

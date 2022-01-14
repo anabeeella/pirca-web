@@ -1,0 +1,427 @@
+@charset "UTF-8";
+/*¿Hay alguna manera de anidar las variables de la fuente dentro de $font-primary?
+Es decir, font-primary-light; font-primary-bold... etc
+
+> font: italic bold 12px Georgia, serif;
+*/
+/*mediaqueries en archivo de Ruky*/
+/*Cuando el fondo es gradiente o $color-primary, el ícono y/o texto es blanco - VER LÍNEA 104*/
+/*Generar todas las variables de color primario y secundario*/
+/*¿Es conveniente generar otros archivos y luego linkearlos a este? 
+Como si fuera una librería base (sistema de diseño)
+¿Qué elementos me conviene pasar a otro archivo? ¿Botones?*/
+.drawer, #cases, #pirca-description, #trusting {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-family: "Work Sans", Verdana, sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+*::-moz-selection {
+  background-color: #FF91B9;
+}
+
+*::selection {
+  background-color: #FF91B9;
+}
+
+h1 {
+  font-size: 62px;
+  font-weight: 100;
+  line-height: 60px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 34px;
+}
+
+h3 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+h4 {
+  font-size: 19px;
+  line-height: 24px;
+}
+
+header {
+  background: -webkit-gradient(linear, left top, right top, from(#006cb3), to(#025287));
+  background: linear-gradient(90deg, #006cb3 0%, #025287 100%);
+  height: 90vh;
+  padding: 16px;
+  color: white;
+  border-radius: 0 0 0 80px;
+  /*DUDOSO - Corregir esto*/
+}
+
+header .hero-text {
+  margin-top: 240px;
+}
+
+header h1 {
+  max-width: 500px;
+}
+
+.navbar {
+  background: -webkit-gradient(linear, left top, right top, from(#006cb3), to(#025287));
+  background: linear-gradient(90deg, #006cb3 0%, #025287 100%);
+  top: 0;
+  color: white;
+  padding: 16px;
+  z-index: 1;
+  position: -webkit-sticky;
+  position: sticky;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.drawer {
+  background-color: white;
+  height: 100vh;
+  width: 90%;
+  font-size: 32px;
+  font-weight: 700;
+  color: black;
+}
+
+.drawer li {
+  padding: 16px 0;
+}
+
+section {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section h2 {
+  margin-top: 32px;
+}
+
+p {
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 31px;
+  padding: 16px;
+}
+
+footer, #services, .joinus {
+  border-radius: 0 0 40px 0;
+  background: -webkit-gradient(linear, left top, right top, from(#006cb3), to(#025287));
+  background: linear-gradient(90deg, #006cb3 0%, #025287 100%);
+  padding: 16px;
+  color: white;
+}
+
+footer a, #services a, .joinus a {
+  color: white;
+}
+
+footer a:hover, #services a:hover, .joinus a:hover {
+  color: #FF91B9;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 60vh;
+  border-radius: 0 40px 0 0;
+}
+
+footer nav {
+  padding: 32px 0;
+  font-size: 24px;
+}
+
+footer nav li {
+  font-size: 32px;
+  font-weight: 600;
+  padding: 4px 0;
+}
+
+footer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 16px;
+}
+
+footer div .material-icons {
+  padding: 4px;
+}
+
+.btn {
+  background-color: white;
+  border: 2px;
+  border-style: solid;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #FF91B9;
+}
+
+.btn__text {
+  font-size: 24px;
+  padding: 12px 24px 12px 24px;
+  -webkit-box-shadow: 8px 8px black;
+          box-shadow: 8px 8px black;
+  border-radius: 0 0 12px 0;
+}
+
+.btn__text-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 24px;
+  padding: 12px 24px 12px 24px;
+  -webkit-box-shadow: 8px 8px black;
+          box-shadow: 8px 8px black;
+  border-radius: 0 0 12px 0;
+}
+
+.btn__text-icon:hover > .moving-icon {
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
+}
+
+.btn__text-icon:hover > .moving-icon-right {
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+}
+
+.btn__text-icon:hover > .moving-icon-down {
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+.btn__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  -webkit-box-shadow: 4px 4px black;
+          box-shadow: 4px 4px black;
+}
+
+.btn__label {
+  font-size: 20px;
+  border-style: none;
+  color: #006cb3;
+}
+
+.btn__label:hover {
+  color: black;
+  background-color: white;
+}
+
+.moving-auto-down {
+  -webkit-animation: translateIcon 0.6s ease 0s infinite alternate;
+          animation: translateIcon 0.6s ease 0s infinite alternate;
+}
+
+@-webkit-keyframes translateIcon {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes translateIcon {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+.highlighted {
+  color: #006cb3;
+  font-weight: 600;
+}
+
+.two-lines-text {
+  font-size: 32px;
+  font-weight: 100;
+  text-align: center;
+  max-width: 260px;
+  margin-bottom: 120px;
+}
+
+.subtitle {
+  font-size: 22px;
+  font-weight: 100;
+}
+
+.cases-detail img {
+  aspect-ratio: 4 / 3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 50vh;
+}
+
+.cases-detail h4 {
+  font-weight: 400;
+}
+
+.services__cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px;
+}
+
+.services__cards-item {
+  width: 50%;
+  text-align: center;
+}
+
+.services__cards-item h3 {
+  font-size: 20px;
+}
+
+.services__cards-item p {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.job-card {
+  width: 90vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 16px;
+  padding: 16px 32px;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.job-card__title {
+  padding: 0 16px;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.img-group {
+  padding: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.img-group img {
+  padding: 16px;
+}
+
+.slider__control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: gray;
+  padding-bottom: 32px;
+}
+
+.slider__control-active {
+  color: #006cb3;
+}
+
+.slider__control .dot {
+  padding: 4px;
+}
+
+/*::-webkit-scrollbar {
+  height: 4px;              /* height of horizontal scrollbar ← You're missing this /
+  width: 4px;               / width of vertical scrollbar 
+  border: 1px solid #d5d5d5;
+
+
+
+
+  slider__control
+}*/
+/*# sourceMappingURL=style.css.map */

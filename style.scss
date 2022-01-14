@@ -1,0 +1,367 @@
+$font-primary: 'Work Sans', Verdana, sans-serif; 
+
+/*¿Hay alguna manera de anidar las variables de la fuente dentro de $font-primary?
+Es decir, font-primary-light; font-primary-bold... etc
+
+> font: italic bold 12px Georgia, serif;
+*/
+
+$gradient-primary: linear-gradient(90deg, rgba(0,108,179,1) 0%, rgba(2,82,135,1) 100%);
+$gradient-secondary: linear-gradient(90deg, rgba(253,123,170,1) 0%, rgba(0,108,179,1) 100%);
+
+$color-primary: rgba(0,108,179,1);
+$color-secondary: #FF91B9;
+
+$base-size: 8px;
+$xs-size: $base-size/2;
+$sm-size: $base-size*2;
+$md-size: $base-size*3;
+$lg-size: $base-size*4;
+
+$z-first: 0 14px 30px 0 rgba(0, 0, 0, 0.2);
+$z-second: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+$z-third: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
+
+/*mediaqueries en archivo de Ruky*/
+
+/*Cuando el fondo es gradiente o $color-primary, el ícono y/o texto es blanco - VER LÍNEA 104*/
+/*Generar todas las variables de color primario y secundario*/
+/*¿Es conveniente generar otros archivos y luego linkearlos a este? 
+Como si fuera una librería base (sistema de diseño)
+¿Qué elementos me conviene pasar a otro archivo? ¿Botones?*/
+
+
+%vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    font-family: $font-primary;
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    &::selection {
+        background-color: $color-secondary;
+    }
+}
+
+h1 {
+    font-size: 62px;
+    font-weight: 100;
+    line-height: 60px;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 34px;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 36px;
+}
+
+h4 {
+    font-size: 19px;
+    line-height: 24px;
+}
+
+header {
+    background: $gradient-primary;
+    height: 90vh;
+    padding: $sm-size;
+    color: white;
+    border-radius: 0 0 0 80px;
+    /*DUDOSO - Corregir esto*/
+    .hero-text { 
+        margin-top: 240px;
+    }
+}
+
+header h1 {
+    max-width: 500px;
+}
+
+.navbar {
+    background: $gradient-primary;
+    top: 0;
+    color: white;
+    padding: $sm-size;
+    z-index: 1;
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+}
+
+.drawer{
+    @extend %vertical-center;
+    background-color: white;
+    height: 100vh;
+    width: 90%;
+    font-size: $lg-size;
+    font-weight: 700;
+    color: black;
+
+    li {
+        padding: $sm-size 0;
+    }
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        margin-top: $lg-size;
+    }
+}
+
+p {
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 31px;
+    padding: $sm-size;
+}
+
+footer, #services, .joinus {
+    border-radius: 0 0 40px 0;
+    background: $gradient-primary;
+    padding: $sm-size;
+    color: white;
+
+    a {
+        color: white;
+        &:hover {
+        color: $color-secondary;
+        }
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    border-radius: 0 40px 0 0;
+
+    nav {
+        padding: $lg-size 0;
+        font-size: 24px;
+
+        li {
+            font-size: $lg-size;
+            font-weight: 600;
+            padding: $xs-size 0;
+        }
+    }
+    
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: $sm-size;
+
+        .material-icons {
+            padding: $xs-size;
+        }
+    }
+
+}
+
+
+
+#cases, #pirca-description, #trusting {
+    @extend %vertical-center;
+}
+
+.btn {
+    background-color: white;
+    border: 2px;
+    border-style:solid;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+
+    &__text {
+        font-size: 24px;
+        padding: 12px 24px 12px 24px;
+        box-shadow: 8px 8px black;
+        border-radius: 0 0 12px 0;
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            padding: 12px 24px 12px 24px;
+            box-shadow: 8px 8px black;
+            border-radius: 0 0 12px 0;
+
+            &:hover > {
+
+                .moving-icon {
+                    transition-duration: 0.2s;
+                    transition-timing-function: ease-in;
+
+                    &-right {
+                        transform: translateX(10px); 
+                    }
+                    
+                    &-down {
+                        transform: translateY(10px);
+                    }
+                }
+            }
+        }
+    }
+    &__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        box-shadow: 4px 4px black;
+    }
+    &__label {
+        font-size: 20px;
+        border-style: none;
+        color: $color-primary;
+        &:hover {
+            color: black;
+            background-color: white;
+        }
+    }
+}
+
+.moving-auto-down {
+    animation: translateIcon 0.6s ease 0s infinite alternate;
+}
+
+@keyframes translateIcon {
+    from {transform: translateY(0px);}
+    to {transform: translateY(20px);}
+}
+
+.highlighted {
+    color: $color-primary;
+    font-weight: 600;
+}
+
+.two-lines-text {
+    font-size: 32px;
+    font-weight: 100;
+    text-align: center;
+    max-width: 260px;
+    margin-bottom: 120px;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 100;
+}
+
+
+.cases-detail {
+    
+    img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        height: 50vh;
+    }
+    h4 {
+        font-weight: 400;
+    }
+}
+
+.services {
+
+    &__cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: $sm-size;
+    }
+
+    &__cards-item {
+        width: 50%;
+        text-align: center;
+
+        h3 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+    }
+}
+
+.job-card {
+    width: 90vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: $sm-size;
+    padding: $sm-size $lg-size;
+    border-radius: 20px;
+    box-shadow: $z-third;
+
+    &__title {
+        padding: 0 $sm-size;
+        flex-grow: 2;
+    }
+}
+
+.img-group {
+    padding: $lg-size;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    img {
+        padding: $sm-size;
+    }
+}
+
+
+.slider {
+    &__control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: gray;
+        padding-bottom: $lg-size;
+
+        &-active {
+            color: $color-primary;
+        }
+
+        .dot {
+            padding: $xs-size;
+        }
+    }
+}
+
+
+/*::-webkit-scrollbar {
+  height: 4px;              /* height of horizontal scrollbar ← You're missing this /
+  width: 4px;               / width of vertical scrollbar 
+  border: 1px solid #d5d5d5;
+
+
+
+
+  slider__control
+}*/
