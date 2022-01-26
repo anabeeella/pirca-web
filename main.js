@@ -20,22 +20,22 @@ var projects = [
     {
         "id": 4,
         "title": "Consultoría",
-        "company": "TEDx Rïo de La Plata",
+        "company": "TEDx Río de La Plata",
         "description": ""
     }
 ]
 
-var projectContent = document.getElementById('slider-cases-content');
+var casesContent = document.getElementById('slider-cases-content');
 
 for(item of projects){
-    projectContent.innerHTML += `                
+    casesContent.innerHTML += `                
     <div class="cases-detail mySlides">
         <img src="assets/${item.id}.JPG">
-        <div>
+        <div class="cases-text">
           <h3>${item.title}</h3>
           <h4>${item.company}</h4>
-        </div>
         <button class="btn btn__label">+ Ver más</button>
+        </div>
     </div>
 `
 }
@@ -59,16 +59,52 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
+  var dots = document.getElementsByClassName("punto");
   if (n > slides.length) {slideIndex = 1}
     if (n < 1) {slideIndex = slides.length}
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
     for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace("slider__control-active", "");
+      dots[i].className = dots[i].className.replace("dot-active", "");
     }
     slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " slider__control-active";
+    dots[slideIndex-1].className += "dot-active";
 }
+
+
+
+const pircaSectionsBlue = document.querySelectorAll('.section__blue');
+const pircaSectionsWhite = document.querySelectorAll('.section__white');
+const pircaNavbar = document.querySelector('.navbar');
+
+const observerPirca = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && entry.target.className === 'section__blue') {
+      pircaNavbar.classList.remove('navbar--white');
+      pircaNavbar.classList.add('navbar--blue');
+      console.log('intersecting-blue')
+    }
+    else if (entry.isIntersecting && entry.target.className === 'section__white') {
+      pircaNavbar.classList.remove('navbar--blue');
+      pircaNavbar.classList.add('navbar--white');
+      console.log('intersecting-white')
+    }
+    else {
+      console.log('not-intersecting');
+    }
+  });
+}, {threshold: [0,1]});
+  
+
+pircaSectionsBlue.forEach(pircaSectionBlue=> {
+  observerPirca.observe(pircaSectionBlue);
+});
+
+pircaSectionsWhite.forEach(pircaSectionWhite=> {
+  observerPirca.observe(pircaSectionWhite);
+});
+
+/*Cuando pasa por "Cases-content" hacer que se vaya el fondo directamente*/
+/*En desktop no funciona*/
 

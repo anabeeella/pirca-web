@@ -1,0 +1,339 @@
+@import '_variables';
+@import '_common';
+
+.container {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin display($display, $justify, $align) {
+                
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+
+}
+
+header {
+    @include display(flex,inherit,center);
+    background: $gradient-primary;
+    border-radius: 0 0 0 80px;
+    color: white;
+    height: 80vh;
+    padding: $sm-size;
+}
+
+
+.navbar {
+    @include display(flex, space-between, inherit);
+    background-image: $gradient-primary;
+    color: white;
+    padding: $sm-size;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    transition: all ease-in-out .3s;
+
+    &--blue {
+        color: white;
+        background-image: $gradient-primary;
+    }
+    
+    &--white {
+        color: $color-primary;
+        background-image: none;
+    }
+}
+
+.drawer{
+    background-color: white;
+    color: black;
+    font: 700 48px/50px $font-primary;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 90%;
+    z-index: 200;
+
+    li {
+        padding: $sm-size 0;
+    }
+
+    .close-drawer {
+        top: 0;
+        left: 0;
+    }
+}
+
+section {
+    @include display(flex, center, center);
+    flex-direction: column;
+    min-height: 100vh;
+    h2 {
+        margin-top: $lg-size;
+    }
+}
+
+#cases-content {
+    display: grid;
+    grid-template-columns: 0 auto 0;
+    grid-template-rows: auto auto;
+    #slider-cases-content{
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+    .slider__control{
+        grid-column-start: 2;
+        grid-row-start: 2;
+    }
+}
+
+
+footer, #services, .joinus {
+    border-radius: 0 0 40px 0;
+    background: $gradient-primary;
+    color: white;
+    padding: $sm-size;
+
+    a {
+        color: white;
+        &:hover {
+        color: $color-secondary;
+        }
+    }
+}
+
+footer {
+    border-radius: 0 40px 0 0;
+    display: flex;
+    flex-direction: column;
+
+    nav {
+        font-size: 24px;
+        padding: $lg-size 0;
+
+        li {
+            font-size: $lg-size;
+            font-weight: 600;
+            padding: $xs-size 0;
+        }
+    }
+    
+    div {
+        @include display(flex, space-between, center);
+        margin-bottom: $sm-size;
+
+        .material-icons {
+            padding: $xs-size;
+        }
+    }
+
+    p {
+        font-size: 18px;
+    }
+}
+
+#cases, #pirca-description, #trusting {
+    @include display(flex, center, center);
+    flex-direction: column;
+}
+
+
+.texto-pirca {
+    @include display(flex, center, center);
+    padding: $sm-size;
+}
+
+.moving-auto-down {
+    animation: translateIcon 0.6s ease 0s infinite alternate;
+}
+
+@keyframes translateIcon {
+    from {transform: translateY(0px);}
+    to {transform: translateY(20px);}
+}
+
+.highlighted {
+    color: $color-primary;
+    font-weight: 600;
+}
+
+.two-lines-text {
+    font: 100 32px $font-primary;
+    max-width: 50vw;
+    margin-bottom: 120px;
+    text-align: center;
+}
+
+.subtitle {
+    font: 100 22px $font-primary;
+}
+
+.joinus {
+    margin-bottom: $lg-size;
+    padding: $lg-size;
+    width: 100%;
+    p {
+        max-width: 800px;
+    }
+}
+
+.cases{
+    &-detail {
+        img {
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            width: 100%;
+        }
+        h4 {
+            font-weight: 400;
+        }
+    }
+    &-text {
+        padding: 0 $lg-size;
+    }
+}
+
+.services {
+    &__cards{
+        @include display(flex, center, center);
+        flex-wrap: wrap;
+    }
+
+    &__cards-item {
+        max-width: 50%;
+        text-align: center;
+        padding: $md-size;
+        margin-bottom: $md-size;
+        h3 {
+            font-size: 20px;
+        }
+        p {
+            font: 100 16px/20px $font-primary;
+            text-align: center;
+        }
+    }
+}
+
+.job-card {
+    @include display(flex, space-between, center);
+    border-radius: 20px;
+    box-shadow: $z-third;
+    padding: $sm-size $lg-size;
+    width: 80vw;
+
+    &__title {
+        flex-grow: 2;
+        padding: 0 $sm-size;
+    }
+}
+
+.img-group {
+    @include display(flex, center, inherit);
+    flex-wrap: wrap;
+    padding: $lg-size;
+
+    img {
+        padding: $sm-size;
+    }
+}
+
+.prev, .prev-desktop, .next, .next-desktop {
+    margin: auto $sm-size;
+}
+.slider {
+    &__control {
+        @include display(flex, center, center);
+        color: gray;
+        padding-bottom: $lg-size;
+    
+        &-active {
+            color: $color-primary;
+        }
+    }
+}
+
+
+/*::-webkit-scrollbar {
+  height: 4px;              /* height of horizontal scrollbar ← You're missing this /
+  width: 4px;               / width of vertical scrollbar 
+  border: 1px solid #d5d5d5;
+
+  slider__control
+}
+
+*/
+
+@media (min-width: $break-sm) {
+    .prev-desktop, .next-desktop{
+        display: none;
+    }
+}
+
+@media (min-width: $break-md) {
+    header {
+        padding-left: $lg-size*4;
+        .main-title{
+            width: 40%;
+        }
+    }
+
+    .texto-pirca{
+        padding-left: $xl-size;
+        max-width: 75%;
+    }
+
+    .job {
+        &-content{
+        margin-left: $lg-size;
+        margin-right: auto;
+        }
+        &-card {
+        max-width: 30vw;
+        }
+    }
+
+    #cases-content {
+        grid-template-columns: auto auto auto;
+        #slider-cases-content{
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        .prev, .next{
+                display: none;
+        }
+        .prev-desktop, .next-desktop{
+            display: inherit;
+            margin: auto $xl-size;
+        }
+    }
+
+    .services__cards-item {
+        max-width: 25%;
+        padding: $lg-size;
+        h3 {
+            font-size: 24px;
+            margin-bottom: $sm-size;
+        }
+    
+    }
+}
+
+/*JOIN US SE DESCAJETA EN ESTE BREAK*/
+@media (min-width: $break-lg) {
+    p {
+        margin-right: auto;
+        max-width: 60vw;
+    }
+
+    .texto-pirca{
+        padding-left: $xxl-size;
+        max-width: 50%;
+    }
+
+    #services {
+        padding: 0 200px;
+    }
+}

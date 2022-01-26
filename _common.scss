@@ -1,0 +1,125 @@
+@import '_variables';
+
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: $font-primary;
+    list-style: none;
+    margin: 0;
+    text-decoration: none;
+    &::selection {
+        background-color: $color-secondary;
+    }
+}
+
+h1 {
+    font: 100 62px/60px $font-primary;
+}
+
+h2 {
+    font: 700 32px/34px $font-primary;
+    margin-bottom: $lg-size;
+}
+
+h3 {
+    font: 700 28px/36px $font-primary;
+}
+
+h4 {
+    font: 700 19px/24px $font-primary;
+}
+
+p {
+    font: 200 22px/31px $font-primary;
+}
+
+.btn {
+    background-color: white;
+    border: 2px;
+    border-style:solid;
+    color: black;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+
+    &__text {
+        font-size: 24px;
+        padding: 12px 24px 12px 24px;
+        box-shadow: 8px 8px black;
+        border-radius: 0 0 12px 0;
+
+        &-icon {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            padding: 12px 24px 12px 24px;
+            box-shadow: 8px 8px black;
+            border-radius: 0 0 12px 0;
+
+            &:hover > {
+
+                .moving-icon {
+                    transition-duration: 0.2s;
+                    transition-timing-function: ease-in;
+
+                    &-right {
+                        transform: translateX(10px); 
+                    }
+                    
+                    &-down {
+                        transform: translateY(10px);
+                    }
+                }
+            }
+        }
+    }
+    &__icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        box-shadow: 4px 4px black;
+    }
+    &__label {
+        font-size: 20px;
+        border-style: none;
+        color: $color-primary;
+        &:hover {
+            color: black;
+            background-color: white;
+        }
+    }
+}
+
+
+.dot {
+    background-color: grey;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: $xs-size;
+    margin: $xs-size;
+    &-active {
+        background-color: $color-primary;
+    }
+}
+
+
+@media (min-width: $break-md) {
+    h2 {
+        font: 700 38px/40px $font-primary;
+        margin-bottom: $xl-size;
+    }
+
+    .dot {
+        padding: $base-size;
+        margin: $base-size;
+    }
+}
+

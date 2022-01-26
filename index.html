@@ -8,11 +8,11 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700;900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="main.css">
     </head>
     <body>
-        <!--
-        <nav class="drawer">
+        <!-- <nav class="drawer">
+            <span class="material-icons close-drawer">arrow_downward</span>
             <ul>
                 <li><a href="#cases">Cases.</a></li>
                 <li><a href="#services">Services.</a></li>
@@ -20,44 +20,52 @@
                 <li><a href="#joinus">Join Us.</a></li>
                 <li><a href="#contactus">Contact Us.</a></li>
             </ul>
-        </nav>
-        -->
+        </nav> 
+
+<div class="navbar"></div> .navbar
+<header class="section"></header> header.navbar
+<li></li> li*6
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+-->
+
         <div class="navbar">
-            <span class="icon material-icons">menu</span>
+            <span class="icon material-icons open-drawer">menu</span>
             <a class="logo" href="#"><img width="32" src="assets/logo-01.svg"></a>
         </div>
-        <header>
-            <div class="hero-text">
+        <header class="section__blue">
+            <div class="main-title">
                 <span class="subtitle">We are Pirca.</span>
                 <h1>We are <strong>solutions developers.</strong></h1>
                 <span class="icon material-icons moving-auto-down">arrow_downward</span>
             </div>
         </header>
-        <main>
-            <section>
+        <main class="container">
+            <section class="texto-pirca section__white">
                 <p>Las Pircas son grupos de piedras apiladas que utilizaban los antiguos habitantes para <span class="highlighted">marcar caminos</span> y avanzar hacia sus objetivos. Hoy se siguen utilizando en senderos de montaña para ayudar a los viajeros a encontrar el camino.
                 <br><br>Siguiendo esta filosofía, en el año 2010 nació Pirca Solutions, buscando un <span class="highlighted">enfoque integral</span> que permita a nuestros clientes encontrar su camino tecnológico, brindando una solución efectiva a todas sus necesidades informáticas y electrónicas.</p>
             </section>
-            <section id="cases">
-                <h2 class="two-lines-text">Infinite devices, <span class="highlighted">one experience</span></h2>
+            <section id="cases" class="section__white">
+                <h2 class="two-lines-text">Infinite devices, <br><span class="highlighted">one experience</span></h2>
                 <a href="#cases-content"><button class="btn btn__text-icon">Cases<span class="material-icons moving-icon moving-icon-down">arrow_downward</span></button></a>
             </section>
-            <section id="cases-content">
-                <div id="slider-cases-content" class="slider__cases">
-                
-                <!--NO PUEDO GENERAR EL CONTENIDO CON LA CLASE "SLIDER__CASES" EN JS-->
-            
-                </div>
+            <section id="cases-content" class="section__white">
+                <a class="prev-desktop" onclick="plusSlides(-1)"><button class="btn btn__icon"><span class="material-icons">arrow_back</span></button></a>
+                <div id="slider-cases-content" class="slider__cases"></div>
+                <a class="next-desktop" onclick="plusSlides(1)"><button class="btn btn__icon"><span class="material-icons">arrow_forward</span></button></a>
                 <div class="slider__control">
                     <a class="prev" onclick="plusSlides(-1)"><button class="btn btn__icon"><span class="material-icons">arrow_back</span></button></a>
-                    <span class="dot material-icons slider__control-active" onclick="currentSlide(1)">fiber_manual_record</span>
-                    <span class="dot material-icons" onclick="currentSlide(2)">fiber_manual_record</span>
-                    <span class="dot material-icons" onclick="currentSlide(3)">fiber_manual_record</span>
-                    <span class="dot material-icons" onclick="currentSlide(4)">fiber_manual_record</span>
+                    <span class="dot dot-active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
                     <a class="next" onclick="plusSlides(1)"><button class="btn btn__icon"><span class="material-icons">arrow_forward</span></button></a>
                 </div>
             </section>
-            <section id="services">
+            <section id="services" class="section__blue">
                 <h2>Services.</h2>
                 <div class="services__cards">
                     <div class="services__cards-item">
@@ -82,13 +90,13 @@
                     </div>
                 </div>
             </section>
-            <section id="team">
+            <section id="team" class="section__white">
                 <h2>Team.</h2>
                 <div>
                 <!-- Incorporar js para generar las distintas cards-->
                 </div>
             </section>
-            <section id="joinus">
+            <section id="joinus" class="section__blue">
                 <div class="joinus">
                     <h2>Join Us.</h2>
                     <p>Autem cumque minima architecto unde, eum voluptates provident voluptate delectus doloribus debitis vel perferendis dicta?</p>
@@ -121,7 +129,7 @@
                     </div>
                 </div>
             </section>
-            <section id="trusting">
+            <section id="trusting" class="section__white">
                 <h2 class="two-lines-text">Trusting <br><span class="highlighted">Pirca Solutions.</span></h2>
                 <div class="img-group">
                     <img src="https://via.placeholder.com/140x60">
