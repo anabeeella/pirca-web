@@ -22,12 +22,13 @@ h1 {
 }
 
 h2 {
-    font: 700 32px/34px $font-primary;
+    font: 700 58px/62px $font-primary;
     margin-bottom: $lg-size;
 }
 
 h3 {
-    font: 700 28px/36px $font-primary;
+    font: 700 32px/34px $font-primary;
+    margin-bottom: $sm-size;
 }
 
 h4 {
@@ -112,8 +113,12 @@ p {
 
 
 @media (min-width: $break-md) {
+    h1 {
+        font: 100 80px/80px $font-primary;
+    }
+
     h2 {
-        font: 700 38px/40px $font-primary;
+        font: 700 68px/70px $font-primary;
         margin-bottom: $xl-size;
     }
 

@@ -7,8 +7,9 @@
     margin-right: auto;
 }
 
+/*Buscar mediaqueries en Ruky*/
+
 @mixin display($display, $justify, $align) {
-                
     display: $display;
     justify-content: $justify;
     align-items: $align;
@@ -20,7 +21,7 @@ header {
     background: $gradient-primary;
     border-radius: 0 0 0 80px;
     color: white;
-    height: 80vh;
+    height: 90vh;
     padding: $sm-size;
 }
 
@@ -72,18 +73,16 @@ section {
     flex-direction: column;
     min-height: 100vh;
     h2 {
+        padding-left: $sm-size;
         margin-top: $lg-size;
+        margin-right: auto;
     }
 }
 
 #cases-content {
     display: grid;
     grid-template-columns: 0 auto 0;
-    grid-template-rows: auto auto;
-    #slider-cases-content{
-        grid-column-start: 2;
-        grid-column-end: 3;
-    }
+    grid-template-rows: auto 1fr;
     .slider__control{
         grid-column-start: 2;
         grid-row-start: 2;
@@ -163,7 +162,7 @@ footer {
 .two-lines-text {
     font: 100 32px $font-primary;
     max-width: 50vw;
-    margin-bottom: 120px;
+    margin-bottom: $lg-size;
     text-align: center;
 }
 
@@ -183,12 +182,14 @@ footer {
 .cases{
     &-detail {
         img {
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 16 / 9;
+            margin-bottom: $sm-size;
             object-fit: cover;
             width: 100%;
         }
         h4 {
             font-weight: 400;
+            margin-bottom: $xl-size;
         }
     }
     &-text {
@@ -227,6 +228,10 @@ footer {
     &__title {
         flex-grow: 2;
         padding: 0 $sm-size;
+    }
+
+    h3 {
+        margin-bottom: $xs-size;
     }
 }
 
@@ -273,36 +278,43 @@ footer {
 }
 
 @media (min-width: $break-md) {
+    section {
+        padding-bottom: $lg-size;
+    }
     header {
-        padding-left: $lg-size*4;
+        padding-left: $lg-size*6;
         .main-title{
             width: 40%;
+        }
+        .moving-auto-down{
+        font-size: 40px;
         }
     }
 
     .texto-pirca{
-        padding-left: $xl-size;
+        padding-left: $lg-size*6;
         max-width: 75%;
+    }
+
+    .joinus {
+        padding-left: $lg-size*6;
     }
 
     .job {
         &-content{
-        margin-left: $lg-size;
-        margin-right: auto;
+            margin-left: $lg-size;
+            margin-right: auto;
+            padding-left: $lg-size*6;
         }
         &-card {
-        max-width: 30vw;
+            max-width: 30vw;
         }
     }
 
     #cases-content {
         grid-template-columns: auto auto auto;
-        #slider-cases-content{
-            grid-column-start: 2;
-            grid-column-end: 3;
-        }
         .prev, .next{
-                display: none;
+            display: none;
         }
         .prev-desktop, .next-desktop{
             display: inherit;
@@ -317,20 +329,13 @@ footer {
             font-size: 24px;
             margin-bottom: $sm-size;
         }
-    
     }
 }
 
-/*JOIN US SE DESCAJETA EN ESTE BREAK*/
 @media (min-width: $break-lg) {
-    p {
-        margin-right: auto;
-        max-width: 60vw;
-    }
-
     .texto-pirca{
-        padding-left: $xxl-size;
-        max-width: 50%;
+        padding-left: $lg-size*6;
+        max-width: 60%;
     }
 
     #services {
