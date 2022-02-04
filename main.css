@@ -199,24 +199,56 @@ header {
 }
 
 .drawer {
+  display: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: white;
-  color: black;
-  font: 700 48px/50px "Work Sans", Verdana, sans-serif;
+  font: 700 52px/50px "Work Sans", Verdana, sans-serif;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
-  width: 90%;
+  height: 100vh;
+  width: 100%;
   z-index: 200;
+  padding: 16px;
 }
 
 .drawer li {
-  padding: 16px 0;
+  padding: 16px;
+}
+
+.drawer a {
+  color: black;
+}
+
+.drawer a:hover {
+  color: #006cb3;
 }
 
 .drawer .close-drawer {
   top: 0;
   left: 0;
+}
+
+.drawer .close-drawer:hover {
+  color: #006cb3;
+  cursor: pointer;
+}
+
+.open-drawer, .logo {
+  cursor: pointer;
+}
+
+.open-drawer:hover, .logo:hover {
+  opacity: 70%;
 }
 
 section {

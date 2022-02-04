@@ -42,7 +42,26 @@ for(item of projects){
 
 
 
+const drawer = document.querySelector('.drawer');
+const openDrawerElement = document.querySelector('.open-drawer');
+const closeDrawerElement = document.querySelectorAll('.close-drawer');
 
+const openDrawer = ()=>{
+  openDrawerElement.addEventListener('click', ()=> {
+    drawer.style.setProperty("display", "flex")
+  })
+}
+
+const closeDrawer = ()=> {
+  closeDrawerElement.forEach(element => {
+    element.addEventListener('click', ()=> {
+      drawer.style.setProperty("display", "none")
+    })
+  })
+}
+
+closeDrawer();
+openDrawer();
 
 
 var slideIndex = 1;
@@ -107,4 +126,3 @@ pircaSectionsWhite.forEach(pircaSectionWhite=> {
 
 /*Cuando pasa por "Cases-content" hacer que se vaya el fondo directamente*/
 /*En desktop no funciona*/
-

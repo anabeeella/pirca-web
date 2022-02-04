@@ -48,23 +48,42 @@ header {
 }
 
 .drawer{
+    @include display(none, space-between, inherit);
+    flex-direction: column;
     background-color: white;
-    color: black;
-    font: 700 48px/50px $font-primary;
+    font: 700 52px/50px $font-primary;
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
-    width: 90%;
+    height: 100vh;
+    width: 100%;
     z-index: 200;
+    padding: $sm-size;
 
-    li {
-        padding: $sm-size 0;
+    li{
+        padding: $sm-size;
     }
-
+    
+    a {
+        color: black;
+        &:hover {
+            color: $color-primary;
+        }
+    }
     .close-drawer {
         top: 0;
         left: 0;
+        &:hover {
+            color: $color-primary;
+            cursor: pointer;
+        }
+    }
+}
+
+.open-drawer, .logo {
+    cursor: pointer;
+    &:hover {
+        opacity: 70%;
     }
 }
 
@@ -342,3 +361,4 @@ footer {
         padding: 0 200px;
     }
 }
+
