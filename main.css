@@ -251,6 +251,10 @@ header {
   opacity: 70%;
 }
 
+.copyright p {
+  font: 400 16px/24px "Work Sans", Verdana, sans-serif;
+}
+
 section {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,10 +326,31 @@ footer nav {
   padding: 32px 0;
 }
 
+footer nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 148px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 footer nav li {
   font-size: 32px;
   font-weight: 600;
-  padding: 4px 0;
+  padding: 4px 32px;
 }
 
 footer div {
@@ -346,7 +371,20 @@ footer div .material-icons {
 }
 
 footer p {
-  font-size: 18px;
+  font-size: 16px;
+}
+
+footer .contact-links a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 16px;
 }
 
 #cases, #pirca-description, #trusting {
@@ -429,6 +467,47 @@ footer p {
 
 .joinus p {
   max-width: 800px;
+}
+
+.team {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.team__card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  padding: 40px 32px;
+}
+
+.team__card-description h3 {
+  margin-top: 16px;
+  margin-bottom: 0;
 }
 
 .cases-detail img {
@@ -560,8 +639,12 @@ footer p {
   .prev-desktop, .next-desktop {
     display: none;
   }
+  .team {
+    width: 100%;
+  }
 }
 
+/* En el medio de estos dos breakpoints las imágenes de "Casos" se borran*/
 @media (min-width: 960px) {
   section {
     padding-bottom: 32px;
@@ -618,6 +701,9 @@ footer p {
   }
   #services {
     padding: 0 200px;
+  }
+  .team {
+    max-width: 70%;
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -87,6 +87,10 @@ header {
     }
 }
 
+.copyright p{
+    font: 400 16px/24px "Work Sans", Verdana, sans-serif;
+}
+
 section {
     @include display(flex, center, center);
     flex-direction: column;
@@ -132,10 +136,18 @@ footer {
         font-size: 24px;
         padding: $lg-size 0;
 
+        ul {
+            @include display(flex, inherit, flex-start);
+            align-content: flex-start;
+            flex-direction: column;
+            max-height: 148px;
+            flex-wrap: wrap;
+        }
+
         li {
             font-size: $lg-size;
             font-weight: 600;
-            padding: $xs-size 0;
+            padding: $xs-size $lg-size;
         }
     }
     
@@ -149,9 +161,15 @@ footer {
     }
 
     p {
-        font-size: 18px;
+        font-size: 16px;
+    }
+
+    .contact-links a {
+        @include display(flex, center, center);
+        padding-left: $sm-size;
     }
 }
+
 
 #cases, #pirca-description, #trusting {
     @include display(flex, center, center);
@@ -195,6 +213,26 @@ footer {
     width: 100%;
     p {
         max-width: 800px;
+    }
+}
+
+.team {
+    @include display(flex, inherit, inherit );
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__card {
+        @include display(flex,center , center);
+        flex-direction: column;
+        text-align: center;
+        padding: $xl-size $lg-size;
+
+        &-description {
+            h3 {
+                margin-top: $sm-size;
+                margin-bottom: 0;
+            }
+        }
     }
 }
 
@@ -294,7 +332,12 @@ footer {
     .prev-desktop, .next-desktop{
         display: none;
     }
+    .team {
+        width: 100%;
+    }
 }
+
+/* En el medio de estos dos breakpoints las imágenes de "Casos" se borran*/
 
 @media (min-width: $break-md) {
     section {
@@ -359,6 +402,10 @@ footer {
 
     #services {
         padding: 0 200px;
+    }
+
+    .team {
+        max-width: 70%;
     }
 }
 

@@ -3,78 +3,84 @@
     "id": 1,
     "name": "Pacha",
     "position": "CEO",
-    "img": "" 
+    "description": "The Big Boss"
 },
 {
     "id": 2,
     "name": "Church",
     "position": "CTO",
-    "img": "" 
+    "description": "Unprofessional Chef"
 },
 {
     "id": 3,
     "name": "Chule",
     "position": "Product Designer",
-    "img": "" 
+    "description": "Beer Lover"
 },
 {
     "id": 4,
     "name": "Leito",
-    "position": "",
-    "img": "" 
+    "position": "Backend Developer",
+    "description": "Super Fixer Hero"
 },
 {
     "id": 5,
     "name": "Nacho 1",
-    "position": "",
-    "img": "" 
+    "position": "Backend Developer",
+    "description": "Professional Multitasker"
 },
 {
     "id": 6,
     "name": "Nacho 2",
-    "position": "",
-    "img": "" 
+    "position": "Backend Developer",
+    "description": "Description"
 },
 {
     "id": 7,
     "name": "Dieguito",
-    "position": "",
-    "img": "" 
+    "position": "Fullstack Developer",
+    "description": "Martial Arts Master"
 },
 {
     "id": 8,
     "name": "Nico",
-    "position": "",
-    "img": "" 
+    "position": "Position",
+    "description": "Description"
 },
 {
     "id": 9,
     "name": "Angel",
-    "position": "",
-    "img": "" 
+    "position": "Position",
+    "description": "Description" 
 },
 {
     "id": 10,
     "name": "Ani",
     "position": "UX-UI Designer",
-    "img": "" 
+    "description": "Crazy Knitter"
 },
 {
     "id": 11,
     "name": "Fede",
     "position": "Frontend Developer",
-    "img": "" 
+    "description": "Description"
 },
 {
     "id": 12,
     "name": "Lean",
     "position": "Backend Developer",
-    "img": "" 
+    "description": "Description"
 },
 {
     "id": 13,
     "name": "Osky",
-    "position": "",
-    "img": "" 
+    "position": "Position",
+    "description": "Description"
+},
+{
+    "id": 14,
+    "name": "Santi",
+    "position": "Frontend Developer",
+    "description": "Description"
 }
 ]

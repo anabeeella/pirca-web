@@ -1,3 +1,29 @@
+
+fetch("./team.json")
+.then (response => response.json())
+.then (data => {
+  console.log(data)
+
+  var teamContent = document.getElementById('team-content')
+
+  for(item of data) {
+    teamContent.innerHTML += `                
+    <div class="team__card">
+    <img src="assets/team/${item.id}.png">
+        <div class="team__card-description">
+          <h3>${item.name}</h3>
+          <p>${item.position}</p>
+          <span>& ${item.description}</span>
+        </div>
+    </div>
+`
+  }
+})
+
+
+
+/***Proyectos***/
+
 var projects = [ 
     {
         "id": 1,
@@ -41,6 +67,7 @@ for(item of projects){
 }
 
 
+/***Drawer***/
 
 const drawer = document.querySelector('.drawer');
 const openDrawerElement = document.querySelector('.open-drawer');
@@ -63,6 +90,9 @@ const closeDrawer = ()=> {
 closeDrawer();
 openDrawer();
 
+
+
+/***Carrousel***/
 
 var slideIndex = 1;
 showSlides(slideIndex);
@@ -92,6 +122,9 @@ function showSlides(n) {
 }
 
 
+/***Nav Observer***/
+
+/*Alguna me mandé porque esto no está funcionando*/
 
 const pircaSectionsBlue = document.querySelectorAll('.section__blue');
 const pircaSectionsWhite = document.querySelectorAll('.section__white');
@@ -126,3 +159,14 @@ pircaSectionsWhite.forEach(pircaSectionWhite=> {
 
 /*Cuando pasa por "Cases-content" hacer que se vaya el fondo directamente*/
 /*En desktop no funciona*/
+
+/*** Team ***/
+/*
+let team = {};
+
+team.get = (url) => {
+  var req = new XMLHttpRequest();
+  req.open('GET', url);
+  req.send();
+};
+*/
