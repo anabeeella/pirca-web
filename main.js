@@ -1,8 +1,9 @@
 
+/*** Team ***/
+
 fetch("./team.json")
 .then (response => response.json())
 .then (data => {
-  console.log(data)
 
   var teamContent = document.getElementById('team-content')
 
@@ -19,6 +20,57 @@ fetch("./team.json")
 `
   }
 })
+
+/*** Jobs ***/
+
+fetch("./jobs.json")
+.then (response => response.json())
+.then (data => {
+
+  var jobsContent = document.getElementById('job-content')  
+
+  for(item of data) {
+
+    jobsContent.innerHTML += 
+    `  
+      <div class="job-card__header">
+        <img src="assets/jobs/${item.id}.png">
+        <div class="job-card__header-title">
+          <h3>${item.title}</h3>
+          <span>${item.type}</span>
+        </div>
+        <span>Ver más</span><span class="material-icons">expand_more</span>
+      </div>
+        <h4>Requisitos para el puesto:</h4>
+        <ul class="responsabilities">
+        `
+        for (let i = 0; i < item.responsabilities.length; i++) {
+          jobsContent.innerHTML += `
+          <li>• ${item.responsabilities[i]}</li>
+        </ul>`
+        } 
+        jobsContent.innerHTML +=
+        `
+        <h4>Tecnologías necesarias</h4>
+        <ul class="necessary-skills">
+        `
+        for (let i = 0; i < item.necessaryskills.length; i++) {
+          jobsContent.innerHTML += `
+          <li>• ${item.necessaryskills[i]}</li>
+          `
+        } 
+        jobsContent.innerHTML +=
+        `
+        </ul>
+    `
+}}
+)
+
+
+
+  /*Acá debería hacer un recorrido por el array dentro de 
+  "Responsabilities", "Necessary skills" y "Nice to have" 
+  para que haga los items correspondientes a cada título */
 
 
 

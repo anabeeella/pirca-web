@@ -460,7 +460,7 @@ footer .contact-links a {
 }
 
 .joinus {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
   padding: 32px;
   width: 100%;
 }
@@ -557,7 +557,7 @@ footer .contact-links a {
   text-align: center;
 }
 
-.job-card {
+.job-card__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -571,18 +571,23 @@ footer .contact-links a {
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 16px 32px;
-  width: 80vw;
 }
 
-.job-card__title {
+.job-card__header-title {
   -webkit-box-flex: 2;
       -ms-flex-positive: 2;
           flex-grow: 2;
   padding: 0 16px;
 }
 
-.job-card h3 {
-  margin-bottom: 4px;
+.job-card__header-title h3 {
+  margin-bottom: 0;
+}
+
+.job-card li {
+  line-height: 32px;
+  margin-bottom: 16px;
+  padding: 16px;
 }
 
 .img-group {
@@ -664,14 +669,6 @@ footer .contact-links a {
   }
   .joinus {
     padding-left: 192px;
-  }
-  .job-content {
-    margin-left: 32px;
-    margin-right: auto;
-    padding-left: 192px;
-  }
-  .job-card {
-    max-width: 30vw;
   }
   #cases-content {
     -ms-grid-columns: auto auto auto;

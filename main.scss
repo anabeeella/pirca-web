@@ -208,7 +208,7 @@ footer {
 }
 
 .joinus {
-    margin-bottom: $lg-size;
+    margin-bottom: $xl-size;
     padding: $lg-size;
     width: 100%;
     p {
@@ -222,7 +222,7 @@ footer {
     flex-wrap: wrap;
 
     &__card {
-        @include display(flex,center , center);
+        @include display(flex, center, center);
         flex-direction: column;
         text-align: center;
         padding: $xl-size $lg-size;
@@ -231,7 +231,7 @@ footer {
             h3 {
                 margin-top: $sm-size;
                 margin-bottom: 0;
-            }
+            }            
         }
     }
 }
@@ -276,21 +276,29 @@ footer {
 }
 
 .job-card {
-    @include display(flex, space-between, center);
-    border-radius: 20px;
-    box-shadow: $z-third;
-    padding: $sm-size $lg-size;
-    width: 80vw;
+    &__header {
+        @include display(flex, space-between, center);
+        border-radius: 20px;
+        box-shadow: $z-third;
+        padding: $sm-size $lg-size;
 
-    &__title {
-        flex-grow: 2;
-        padding: 0 $sm-size;
-    }
+        &-title {
+            flex-grow: 2;
+            padding: 0 $sm-size;
 
-    h3 {
-        margin-bottom: $xs-size;
+            h3 {
+                margin-bottom: 0;
+            }
+        }
     }
+    
+    li {
+        line-height: $lg-size;
+        margin-bottom: $sm-size;
+        padding: $sm-size;
+        }
 }
+
 
 .img-group {
     @include display(flex, center, inherit);
@@ -360,17 +368,6 @@ footer {
 
     .joinus {
         padding-left: $lg-size*6;
-    }
-
-    .job {
-        &-content{
-            margin-left: $lg-size;
-            margin-right: auto;
-            padding-left: $lg-size*6;
-        }
-        &-card {
-            max-width: 30vw;
-        }
     }
 
     #cases-content {
