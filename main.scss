@@ -25,16 +25,19 @@ header {
     padding: $sm-size;
     position: relative;
     
+    .main-title {
+        max-width: 70%;
+    }
+
     &:after {
         content: '';
-        display: block;
         position: absolute;
-        height: 100%;
+        height: 80%;
         width: 100%;
         background: url(/assets/bg-main.png) no-repeat right bottom;
         background-size: cover;
-        bottom: -360px;
-        right: -16px; 
+        bottom: -276px;
+        left: 140px;
     }
 }
 
@@ -225,6 +228,7 @@ footer {
 
 #joinus {
     p {
+        font: 100 18px/24px $font-primary;
         padding-left: $sm-size;
         margin-bottom: $lg-size;
     }
@@ -385,10 +389,14 @@ footer {
 */
 
 @media (min-width: $break-sm) {
-    .bg-main {
-        top: 310px;
-        right: 1000px;
+header {
+    &:after {
+        height: 100%;
+        width: 100%;
+        bottom: -400px;
+        left: 100px;
     }
+}
 }
 
 /* En el medio de estos dos breakpoints las imágenes de "Casos" se borran*/
@@ -405,6 +413,12 @@ footer {
         }
         .moving-auto-down{
         font-size: 40px;
+        }
+        &:after {
+            height: 120%;
+            width: 100%;
+            bottom: -440px;
+            left: 200px;
         }
     }
 
@@ -446,6 +460,14 @@ footer {
 
 
 @media (min-width: $break-lg) {
+
+    header {
+        &:after {
+        height: 140%;
+        bottom: -500px;
+        left: 100px;
+    }
+}
 
     section {
         h2 {
