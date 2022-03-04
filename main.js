@@ -202,8 +202,6 @@ function showSlides(n) {
 
 /***Nav Observer***/
 
-/*Alguna me mandé porque esto no está funcionando*/
-
 const pircaSectionsBlue = document.querySelectorAll('.section__blue');
 const pircaSectionsWhite = document.querySelectorAll('.section__white');
 const pircaNavbar = document.querySelector('.navbar');
@@ -213,12 +211,12 @@ const observerPirca = new IntersectionObserver(entries => {
     if (entry.isIntersecting && entry.target.className === 'section__blue') {
       pircaNavbar.classList.remove('navbar--white');
       pircaNavbar.classList.add('navbar--blue');
-      console.log('intersecting-blue')
+      /*console.log('intersecting-blue')*/
     }
     else if (entry.isIntersecting && entry.target.className === 'section__white') {
       pircaNavbar.classList.remove('navbar--blue');
       pircaNavbar.classList.add('navbar--white');
-      console.log('intersecting-white')
+      /*console.log('intersecting-white')*/
     }
     else {
       console.log('not-intersecting');

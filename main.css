@@ -212,7 +212,7 @@ header:after {
 
 .navbar--white {
   color: #006cb3;
-  background-image: none;
+  background-image: white;
 }
 
 .drawer {
@@ -309,6 +309,10 @@ section h2 {
       grid-column-start: 2;
   -ms-grid-row: 2;
       grid-row-start: 2;
+}
+
+#cases-content .prev-desktop button, #cases-content .next-desktop button {
+  display: none;
 }
 
 footer, #services, .joinus {
@@ -430,7 +434,7 @@ footer .contact-links a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 16px;
+  padding: 32px;
 }
 
 .moving-auto-down {
@@ -477,7 +481,8 @@ footer .contact-links a {
 }
 
 #joinus p {
-  margin-bottom: 16px;
+  padding-left: 16px;
+  margin-bottom: 32px;
 }
 
 #joinus .job-detail-trigger {
@@ -499,7 +504,6 @@ footer .contact-links a {
 
 .joinus {
   margin-bottom: 40px;
-  padding: 32px;
   width: 100%;
 }
 
@@ -542,6 +546,7 @@ footer .contact-links a {
   text-align: center;
   padding: 16px;
   max-width: 50%;
+  min-width: 25%;
 }
 
 .team__card img {
@@ -694,9 +699,6 @@ footer .contact-links a {
 
 */
 @media (min-width: 640px) {
-  .prev-desktop, .next-desktop {
-    display: none;
-  }
   .bg-main {
     top: 310px;
     right: 1000px;
@@ -708,21 +710,15 @@ footer .contact-links a {
   section {
     padding-bottom: 32px;
   }
-  header {
-    padding-left: 192px;
-  }
   header .main-title {
     width: 40%;
+    padding-left: 120px;
   }
   header .moving-auto-down {
     font-size: 40px;
   }
   .texto-pirca {
-    padding-left: 192px;
     max-width: 75%;
-  }
-  .joinus {
-    padding-left: 192px;
   }
   #cases-content {
     -ms-grid-columns: auto auto auto;
@@ -731,7 +727,7 @@ footer .contact-links a {
   #cases-content .prev, #cases-content .next {
     display: none;
   }
-  #cases-content .prev-desktop, #cases-content .next-desktop {
+  #cases-content .prev-desktop button, #cases-content .next-desktop button {
     display: inherit;
     margin: auto 40px;
   }
@@ -743,21 +739,36 @@ footer .contact-links a {
     padding: 32px;
   }
   .services__cards-item h3 {
-    font-size: 24px;
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .services__cards-item img {
+    width: 80px;
     margin-bottom: 16px;
   }
 }
 
 @media (min-width: 1280px) {
+  section h2 {
+    padding-left: 200px;
+  }
   .texto-pirca {
-    padding-left: 192px;
     max-width: 60%;
   }
-  #services {
-    padding: 0 200px;
+  #services p {
+    font: 100 18px/22px "Work Sans", Verdana, sans-serif;
+  }
+  #joinus p {
+    padding-left: 120px;
+  }
+  .services__cards {
+    padding: 0 120px;
   }
   .team {
-    max-width: 70%;
+    max-width: 80%;
+  }
+  .texto-pirca {
+    padding: 16px 120px;
   }
 }
 /*# sourceMappingURL=main.css.map */

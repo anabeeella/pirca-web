@@ -56,7 +56,7 @@ header {
     
     &--white {
         color: $color-primary;
-        background-image: none;
+        background-image: white;
     }
 }
 
@@ -122,6 +122,9 @@ section {
     .slider__control{
         grid-column-start: 2;
         grid-row-start: 2;
+    }
+    .prev-desktop button, .next-desktop button{
+        display: none;
     }
 }
 
@@ -192,7 +195,7 @@ footer {
 
 .texto-pirca {
     @include display(flex, center, center);
-    padding: $sm-size;
+    padding: $lg-size;
 }
 
 .moving-auto-down {
@@ -222,7 +225,8 @@ footer {
 
 #joinus {
     p {
-        margin-bottom: $sm-size;
+        padding-left: $sm-size;
+        margin-bottom: $lg-size;
     }
     .job-detail-trigger {
         @include display(flex, inherit, center);
@@ -236,7 +240,6 @@ footer {
 
 .joinus {
     margin-bottom: $xl-size;
-    padding: $lg-size;
     width: 100%;
     p {
         max-width: 800px;
@@ -254,6 +257,7 @@ footer {
         text-align: center;
         padding: $sm-size;
         max-width: 50%;
+        min-width: 25%;
         img {
             width: 120px;
         }
@@ -381,9 +385,6 @@ footer {
 */
 
 @media (min-width: $break-sm) {
-    .prev-desktop, .next-desktop{
-        display: none;
-    }
     .bg-main {
         top: 310px;
         right: 1000px;
@@ -398,9 +399,9 @@ footer {
     }
 
     header {
-        padding-left: $lg-size*6;
         .main-title{
             width: 40%;
+            padding-left: 120px;
         }
         .moving-auto-down{
         font-size: 40px;
@@ -408,12 +409,7 @@ footer {
     }
 
     .texto-pirca{
-        padding-left: $lg-size*6;
         max-width: 75%;
-    }
-
-    .joinus {
-        padding-left: $lg-size*6;
     }
 
     #cases-content {
@@ -421,7 +417,7 @@ footer {
         .prev, .next{
             display: none;
         }
-        .prev-desktop, .next-desktop{
+        .prev-desktop button, .next-desktop button{
             display: inherit;
             margin: auto $xl-size;
         }
@@ -431,30 +427,58 @@ footer {
         max-width: 75%;
     }
 
-    .services__cards-item {
+    .services__cards {
+        &-item {
         max-width: 25%;
         padding: $lg-size;
         h3 {
-            font-size: 24px;
+            font-size: 28px;
             margin-bottom: $sm-size;
         }
+        img {
+            width: 80px;
+            margin-bottom: $sm-size;
+        }
+    }
     }
 }
 
 
 
 @media (min-width: $break-lg) {
+
+    section {
+        h2 {
+            padding-left: 200px;
+        }
+    }
+
     .texto-pirca{
-        padding-left: $lg-size*6;
         max-width: 60%;
     }
 
     #services {
-        padding: 0 200px;
+    p {
+        font: 100 18px/22px $font-primary;
+        }
+    }
+
+    #joinus {
+        p {
+            padding-left: 120px;
+        }
+    }
+
+    .services__cards {
+        padding: 0 120px;
     }
 
     .team {
-        max-width: 70%;
+        max-width: 80%;
+    }
+
+    .texto-pirca {
+        padding: $sm-size 120px;
     }
 }
 
