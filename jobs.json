@@ -11,7 +11,9 @@
         ],
         "necessaryskills": [
             "Hand-crafted JavaScript, ECMAScript 5, Vue, Vuex, WebPack.",
-            "HTML5, CSS3, Sass, Framework7",
+            "HTML5, CSS3, Sass, Framework7"
+        ],
+        "deseableskills": [
             "Se valorarán nociones de backend orientadas a la detección de problemas y agilizar así la interacción con el equipo correspondiente."
         ]
     },
@@ -20,10 +22,34 @@
         "title": "Frontend Developer",
         "type": "Remote Friendly",
         "responsabilities": [
-            "-"
+            "Habilidad para trabajar con autonomía y autogestión de las tareas asignadas.", 
+            "Trabajar enfocado en la calidad y buenas prácticas de desarrollo.",
+            "Poder interactuar eventualmente con los clientes externos planteando puntos de vista y colaborando en la elaboración de ideas superadoras.",
+            "Colaborar con nuestro equipo de diseñadores UX."
         ],
         "necessaryskills": [
             "C#, .Net Core, MSSQL, Full Rest-APIs, Azure Cloud"
+        ],
+        "deseableskills": [
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Analista de datos",
+        "type": "Remote Friendly",
+        "responsabilities": [
+            "Habilidad para trabajar con autonomía y autogestión de las tareas asignadas.",
+            "Trabajar enfocado en la calidad y buenas prácticas.",
+            "Poder interactuar con los clientes externos planteando puntos de vista y colaborando en la elaboración de ideas superadoras.",
+            "Poseer idealmente conocimientos de administración, finanzas."
+        ],
+        "necessaryskills": [
+            "Excel (intermedio - avanzado)",
+            "MS-SQL (intermedio - avanzado)"
+        ],
+        "deseableskills": [
+            "POWER BI: SQL Server Reporting Services",
+            "Visual Studio 2018 o sup"
         ]
     }
 ]

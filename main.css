@@ -31,7 +31,7 @@ h2 {
 }
 
 h3 {
-  font: 700 32px/34px "Work Sans", Verdana, sans-serif;
+  font: 700 28px/30px "Work Sans", Verdana, sans-serif;
   margin-bottom: 16px;
 }
 
@@ -134,6 +134,10 @@ p {
     font: 700 68px/70px "Work Sans", Verdana, sans-serif;
     margin-bottom: 40px;
   }
+  h3 {
+    font: 700 32px/34px "Work Sans", Verdana, sans-serif;
+    margin-bottom: 4px;
+  }
   .dot {
     padding: 8px;
     margin: 8px;
@@ -157,12 +161,25 @@ header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: -webkit-gradient(linear, left top, right top, from(#006cb3), to(#025287));
-  background: linear-gradient(90deg, #006cb3 0%, #025287 100%);
+  background-image: -webkit-gradient(linear, left top, right top, from(#006cb3), to(#025287));
+  background-image: linear-gradient(90deg, #006cb3 0%, #025287 100%);
   border-radius: 0 0 0 80px;
   color: white;
   height: 90vh;
   padding: 16px;
+  position: relative;
+}
+
+header:after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url(/assets/bg-main.png) no-repeat right bottom;
+  background-size: cover;
+  bottom: -360px;
+  right: -16px;
 }
 
 .navbar {
@@ -459,6 +476,27 @@ footer .contact-links a {
   font: 100 22px "Work Sans", Verdana, sans-serif;
 }
 
+#joinus p {
+  margin-bottom: 16px;
+}
+
+#joinus .job-detail-trigger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: inherit;
+      -ms-flex-pack: inherit;
+          justify-content: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+#joinus .job-details {
+  display: none;
+}
+
 .joinus {
   margin-bottom: 40px;
   padding: 32px;
@@ -502,12 +540,21 @@ footer .contact-links a {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  padding: 40px 32px;
+  padding: 16px;
+  max-width: 50%;
+}
+
+.team__card img {
+  width: 120px;
 }
 
 .team__card-description h3 {
   margin-top: 16px;
   margin-bottom: 0;
+}
+
+#cases {
+  background-image: url(/assets/bg-cases.png);
 }
 
 .cases-detail img {
@@ -534,9 +581,9 @@ footer .contact-links a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -571,6 +618,7 @@ footer .contact-links a {
   -webkit-box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2);
   padding: 16px 32px;
+  margin-bottom: 40px;
 }
 
 .job-card__header-title {
@@ -584,10 +632,14 @@ footer .contact-links a {
   margin-bottom: 0;
 }
 
-.job-card li {
-  line-height: 32px;
-  margin-bottom: 16px;
-  padding: 16px;
+#job-content h4 {
+  margin: 16px;
+}
+
+#job-content li {
+  list-style: disc;
+  padding-left: 24px;
+  padding-bottom: 16px;
 }
 
 .img-group {
@@ -602,11 +654,12 @@ footer .contact-links a {
           align-items: inherit;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  max-width: 960px;
   padding: 32px;
 }
 
 .img-group img {
-  padding: 16px;
+  padding: 40px;
 }
 
 .prev, .prev-desktop, .next, .next-desktop {
@@ -644,8 +697,9 @@ footer .contact-links a {
   .prev-desktop, .next-desktop {
     display: none;
   }
-  .team {
-    width: 100%;
+  .bg-main {
+    top: 310px;
+    right: 1000px;
   }
 }
 
@@ -680,6 +734,9 @@ footer .contact-links a {
   #cases-content .prev-desktop, #cases-content .next-desktop {
     display: inherit;
     margin: auto 40px;
+  }
+  #job-content {
+    max-width: 75%;
   }
   .services__cards-item {
     max-width: 25%;

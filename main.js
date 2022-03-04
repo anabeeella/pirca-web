@@ -10,7 +10,7 @@ fetch("./team.json")
   for(item of data) {
     teamContent.innerHTML += `                
     <div class="team__card">
-    <img src="assets/team/${item.id}.png">
+    <img src="assets/team/${item.id}.svg">
         <div class="team__card-description">
           <h3>${item.name}</h3>
           <p>${item.position}</p>
@@ -21,6 +21,7 @@ fetch("./team.json")
   }
 })
 
+
 /*** Jobs ***/
 
 fetch("./jobs.json")
@@ -28,49 +29,67 @@ fetch("./jobs.json")
 .then (data => {
 
   var jobsContent = document.getElementById('job-content')  
+  var contentJobHTML = "";
 
   for(item of data) {
 
-    jobsContent.innerHTML += 
+    contentJobHTML += 
     `  
-      <div class="job-card__header">
+      <div class="job-card__header" id="job-${item.id}">
         <img src="assets/jobs/${item.id}.png">
         <div class="job-card__header-title">
           <h3>${item.title}</h3>
           <span>${item.type}</span>
         </div>
-        <span>Ver más</span><span class="material-icons">expand_more</span>
+        <div class="job-detail-trigger job-detail-trigger__${item.id}">
+          <span>Ver más</span>
+          <span class="material-icons">expand_more</span>
+        </div>
       </div>
+      <div class="job-details job-details__${item.id}" id="job__detail-${item.id}">
         <h4>Requisitos para el puesto:</h4>
         <ul class="responsabilities">
         `
         for (let i = 0; i < item.responsabilities.length; i++) {
-          jobsContent.innerHTML += `
-          <li>• ${item.responsabilities[i]}</li>
-        </ul>`
-        } 
-        jobsContent.innerHTML +=
+          contentJobHTML += `
+          <li>${item.responsabilities[i]}</li>
         `
+        } 
+        contentJobHTML +=
+        `</ul>
         <h4>Tecnologías necesarias</h4>
         <ul class="necessary-skills">
         `
         for (let i = 0; i < item.necessaryskills.length; i++) {
-          jobsContent.innerHTML += `
-          <li>• ${item.necessaryskills[i]}</li>
+          contentJobHTML += `
+          <li>${item.necessaryskills[i]}</li>
           `
         } 
-        jobsContent.innerHTML +=
+        contentJobHTML +=
         `
         </ul>
-    `
-}}
+        <h4>Tecnologías deseables:</h4>
+        <ul class="deseable-skills">`
+        for (let i = 0; i < item.deseableskills.length; i++) {
+          contentJobHTML += `
+          <li>${item.deseableskills[i]}</li>
+        `
+        } 
+        contentJobHTML +=
+        `</ul>
+      </div>`
+    }
+
+    jobsContent.innerHTML = contentJobHTML;
+    setTimeout(() => {
+      document.getElementById(`job-${item.id}`).addEventListener('click', ()=> {
+        console.log(`job-${item.id}`)
+        document.getElementById(`job__detail-${item.id}`).style.setProperty
+        ("display", "block")
+      })
+    }, 1000);
+  }
 )
-
-
-
-  /*Acá debería hacer un recorrido por el array dentro de 
-  "Responsabilities", "Necessary skills" y "Nice to have" 
-  para que haga los items correspondientes a cada título */
 
 
 
@@ -144,6 +163,8 @@ openDrawer();
 
 
 
+
+/*ARREGLAR DOTS*/
 /***Carrousel***/
 
 var slideIndex = 1;
@@ -160,15 +181,20 @@ function currentSlide(n) {
 function showSlides(n) {
   var i;
   var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("punto");
+  var dots = document.getElementsByClassName("dot");
+  
+  
   if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
+  if (n < 1) {slideIndex = slides.length}
+  
+  for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
+
+  for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace("dot-active", "");
     }
+
     slides[slideIndex-1].style.display = "block";
     dots[slideIndex-1].className += "dot-active";
 }

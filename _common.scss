@@ -27,7 +27,7 @@ h2 {
 }
 
 h3 {
-    font: 700 32px/34px $font-primary;
+    font: 700 28px/30px $font-primary;
     margin-bottom: $sm-size;
 }
 
@@ -120,6 +120,10 @@ p {
     h2 {
         font: 700 68px/70px $font-primary;
         margin-bottom: $xl-size;
+    }
+    h3 {
+        font: 700 32px/34px $font-primary;
+        margin-bottom: $xs-size;
     }
 
     .dot {

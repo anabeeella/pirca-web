@@ -18,11 +18,24 @@
 
 header {
     @include display(flex,inherit,center);
-    background: $gradient-primary;
+    background-image: $gradient-primary;
     border-radius: 0 0 0 80px;
     color: white;
     height: 90vh;
     padding: $sm-size;
+    position: relative;
+    
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: url(/assets/bg-main.png) no-repeat right bottom;
+        background-size: cover;
+        bottom: -360px;
+        right: -16px; 
+    }
 }
 
 
@@ -207,6 +220,20 @@ footer {
     font: 100 22px $font-primary;
 }
 
+#joinus {
+    p {
+        margin-bottom: $sm-size;
+    }
+    .job-detail-trigger {
+        @include display(flex, inherit, center);
+        cursor: pointer;
+    }
+    .job-details {
+        display: none;
+    }
+}
+
+
 .joinus {
     margin-bottom: $xl-size;
     padding: $lg-size;
@@ -217,7 +244,7 @@ footer {
 }
 
 .team {
-    @include display(flex, inherit, inherit );
+    @include display(flex, inherit, inherit);
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -225,7 +252,11 @@ footer {
         @include display(flex, center, center);
         flex-direction: column;
         text-align: center;
-        padding: $xl-size $lg-size;
+        padding: $sm-size;
+        max-width: 50%;
+        img {
+            width: 120px;
+        }
 
         &-description {
             h3 {
@@ -235,6 +266,11 @@ footer {
         }
     }
 }
+
+#cases {
+    background-image: url(/assets/bg-cases.png);
+}
+
 
 .cases{
     &-detail {
@@ -256,7 +292,7 @@ footer {
 
 .services {
     &__cards{
-        @include display(flex, center, center);
+        @include display(flex, center, flex-start);
         flex-wrap: wrap;
     }
 
@@ -281,6 +317,7 @@ footer {
         border-radius: 20px;
         box-shadow: $z-third;
         padding: $sm-size $lg-size;
+        margin-bottom: $xl-size;
 
         &-title {
             flex-grow: 2;
@@ -291,11 +328,17 @@ footer {
             }
         }
     }
-    
+}
+
+#job-content {
+    h4 {
+        margin: $sm-size;
+    }
+
     li {
-        line-height: $lg-size;
-        margin-bottom: $sm-size;
-        padding: $sm-size;
+        list-style:disc;
+        padding-left: $md-size;
+        padding-bottom: $sm-size;
         }
 }
 
@@ -303,10 +346,11 @@ footer {
 .img-group {
     @include display(flex, center, inherit);
     flex-wrap: wrap;
+    max-width: 960px;
     padding: $lg-size;
 
     img {
-        padding: $sm-size;
+        padding: $xl-size;
     }
 }
 
@@ -340,8 +384,9 @@ footer {
     .prev-desktop, .next-desktop{
         display: none;
     }
-    .team {
-        width: 100%;
+    .bg-main {
+        top: 310px;
+        right: 1000px;
     }
 }
 
@@ -351,6 +396,7 @@ footer {
     section {
         padding-bottom: $lg-size;
     }
+
     header {
         padding-left: $lg-size*6;
         .main-title{
@@ -381,6 +427,10 @@ footer {
         }
     }
 
+    #job-content {
+        max-width: 75%;
+    }
+
     .services__cards-item {
         max-width: 25%;
         padding: $lg-size;
@@ -390,6 +440,8 @@ footer {
         }
     }
 }
+
+
 
 @media (min-width: $break-lg) {
     .texto-pirca{

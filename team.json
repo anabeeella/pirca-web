@@ -37,49 +37,55 @@
 },
 {
     "id": 7,
-    "name": "Dieguito",
+    "name": "Die",
     "position": "Fullstack Developer",
     "description": "Martial Arts Master"
 },
 {
     "id": 8,
-    "name": "Nico",
-    "position": "Position",
-    "description": "Description"
-},
-{
-    "id": 9,
     "name": "Angel",
     "position": "Position",
     "description": "Description" 
 },
 {
-    "id": 10,
+    "id": 9,
     "name": "Ani",
     "position": "UX-UI Designer",
     "description": "Crazy Knitter"
 },
 {
-    "id": 11,
+    "id": 10,
     "name": "Fede",
     "position": "Frontend Developer",
     "description": "Description"
 },
 {
-    "id": 12,
+    "id": 11,
     "name": "Lean",
     "position": "Backend Developer",
     "description": "Description"
 },
 {
-    "id": 13,
+    "id": 12,
     "name": "Osky",
     "position": "Position",
     "description": "Description"
 },
 {
-    "id": 14,
+    "id": 13,
     "name": "Santi",
+    "position": "Backend Developer",
+    "description": "Description"
+},
+{
+    "id": 14,
+    "name": "Luki",
+    "position": "Backend Developer",
+    "description": "Description"
+},
+{
+    "id": 15,
+    "name": "Lucio",
     "position": "Backend Developer",
     "description": "Description"
 }
