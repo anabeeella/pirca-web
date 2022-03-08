@@ -54,12 +54,10 @@ header {
 
     &--blue {
         color: white;
-        background-image: $gradient-primary;
     }
     
     &--white {
         color: $color-primary;
-        background-image: white;
     }
 }
 
@@ -153,7 +151,7 @@ footer {
 
     nav {
         font-size: 24px;
-        padding: $lg-size 0;
+        padding: $xl-size 0;
 
         ul {
             @include display(flex, inherit, flex-start);
@@ -232,15 +230,7 @@ footer {
         padding-left: $sm-size;
         margin-bottom: $lg-size;
     }
-    .job-detail-trigger {
-        @include display(flex, inherit, center);
-        cursor: pointer;
-    }
-    .job-details {
-        display: none;
-    }
 }
-
 
 .joinus {
     margin-bottom: $xl-size;
@@ -249,6 +239,55 @@ footer {
         max-width: 800px;
     }
 }
+
+.active-searches {
+    @include display(flex, inherit, inherit);
+}
+
+.job-card {
+    &__header {
+        @include display(flex, space-between, center);
+        border-radius: 20px;
+        padding: $sm-size $lg-size;
+        margin-bottom: $xl-size;
+
+        &-title {
+            flex-grow: 2;
+            padding: 0 $sm-size;
+
+            h3 {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__active {
+        box-shadow: $z-first;
+    }
+    &__inactive {
+        box-shadow: $z-third;
+    } 
+}
+
+.job-detail-trigger {
+    @include display(flex, center, center);
+}
+
+
+#job-content-details {
+    margin: $lg-size auto auto $md-size;
+    max-width: 50vw;
+    h4 {
+        margin-bottom: $sm-size;
+    }
+    ul {
+        margin-bottom: $md-size;
+    }
+}
+
+.job-details__2, .job-details__3 {
+    display: none;
+}
+
 
 .team {
     @include display(flex, inherit, inherit);
@@ -283,10 +322,8 @@ footer {
 .cases{
     &-detail {
         img {
-            aspect-ratio: 16 / 9;
             margin-bottom: $sm-size;
-            object-fit: cover;
-            width: 100%;
+            max-width: 60vw;
         }
         h4 {
             font-weight: 400;
@@ -295,6 +332,21 @@ footer {
     }
     &-text {
         padding: 0 $lg-size;
+    }
+}
+
+.prev, .prev-desktop, .next, .next-desktop {
+    margin: auto $sm-size;
+}
+.slider {
+    &__control {
+        @include display(flex, center, center);
+        color: gray;
+        padding-bottom: $lg-size;
+    
+        &-active {
+            color: $color-primary;
+        }
     }
 }
 
@@ -319,38 +371,6 @@ footer {
     }
 }
 
-.job-card {
-    &__header {
-        @include display(flex, space-between, center);
-        border-radius: 20px;
-        box-shadow: $z-third;
-        padding: $sm-size $lg-size;
-        margin-bottom: $xl-size;
-
-        &-title {
-            flex-grow: 2;
-            padding: 0 $sm-size;
-
-            h3 {
-                margin-bottom: 0;
-            }
-        }
-    }
-}
-
-#job-content {
-    h4 {
-        margin: $sm-size;
-    }
-
-    li {
-        list-style:disc;
-        padding-left: $md-size;
-        padding-bottom: $sm-size;
-        }
-}
-
-
 .img-group {
     @include display(flex, center, inherit);
     flex-wrap: wrap;
@@ -359,21 +379,6 @@ footer {
 
     img {
         padding: $xl-size;
-    }
-}
-
-.prev, .prev-desktop, .next, .next-desktop {
-    margin: auto $sm-size;
-}
-.slider {
-    &__control {
-        @include display(flex, center, center);
-        color: gray;
-        padding-bottom: $lg-size;
-    
-        &-active {
-            color: $color-primary;
-        }
     }
 }
 
@@ -438,7 +443,7 @@ header {
     }
 
     #job-content {
-        max-width: 75%;
+        margin: 0 auto 0 80px;
     }
 
     .services__cards {
@@ -471,7 +476,7 @@ header {
 
     section {
         h2 {
-            padding-left: 200px;
+            padding-left: 120px;
         }
     }
 
@@ -485,10 +490,8 @@ header {
         }
     }
 
-    #joinus {
-        p {
+    #joinus .joinus p {
             padding-left: 120px;
-        }
     }
 
     .services__cards {

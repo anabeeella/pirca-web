@@ -28,14 +28,13 @@ fetch("./jobs.json")
 .then (response => response.json())
 .then (data => {
 
-  var jobsContent = document.getElementById('job-content')  
-  var contentJobHTML = "";
+  var jobsContent = document.getElementById('job-content');
 
   for(item of data) {
 
-    contentJobHTML += 
+    jobsContent.innerHTML += 
     `  
-      <div class="job-card__header" id="job-${item.id}">
+      <div class="job-card__header job-card__active" id="job-${item.id}">
         <img src="assets/jobs/${item.id}.png">
         <div class="job-card__header-title">
           <h3>${item.title}</h3>
@@ -43,53 +42,60 @@ fetch("./jobs.json")
         </div>
         <div class="job-detail-trigger job-detail-trigger__${item.id}">
           <span>Ver más</span>
-          <span class="material-icons">expand_more</span>
+          <span class="material-icons">chevron_right</span>
         </div>
       </div>
-      <div class="job-details job-details__${item.id}" id="job__detail-${item.id}">
-        <h4>Requisitos para el puesto:</h4>
-        <ul class="responsabilities">
-        `
-        for (let i = 0; i < item.responsabilities.length; i++) {
-          contentJobHTML += `
-          <li>${item.responsabilities[i]}</li>
-        `
-        } 
-        contentJobHTML +=
-        `</ul>
-        <h4>Tecnologías necesarias</h4>
-        <ul class="necessary-skills">
-        `
-        for (let i = 0; i < item.necessaryskills.length; i++) {
-          contentJobHTML += `
-          <li>${item.necessaryskills[i]}</li>
-          `
-        } 
-        contentJobHTML +=
-        `
-        </ul>
-        <h4>Tecnologías deseables:</h4>
-        <ul class="deseable-skills">`
-        for (let i = 0; i < item.deseableskills.length; i++) {
-          contentJobHTML += `
-          <li>${item.deseableskills[i]}</li>
-        `
-        } 
-        contentJobHTML +=
-        `</ul>
-      </div>`
-    }
-
-    jobsContent.innerHTML = contentJobHTML;
-    setTimeout(() => {
-      document.getElementById(`job-${item.id}`).addEventListener('click', ()=> {
-        console.log(`job-${item.id}`)
-        document.getElementById(`job__detail-${item.id}`).style.setProperty
-        ("display", "block")
-      })
-    }, 1000);
+    `
   }
+}
 )
+
+
+fetch("./jobs.json")
+.then (response => response.json())
+.then (data => {
+
+var jobsContentDetail = document.getElementById('job-content-details');
+contentJobHTML = '';
+
+for(item of data) {
+  contentJobHTML += 
+  `<div class="job-details job-details__${item.id}">
+  <h4>Requisitos para el puesto:</h4>
+  <ul class="responsabilities">
+  `
+  for (let i = 0; i < item.responsabilities.length; i++) {
+    contentJobHTML += `
+    <li>• ${item.responsabilities[i]}</li>
+  `
+  } 
+  contentJobHTML +=
+  `</ul>
+  <h4>Tecnologías necesarias</h4>
+  <ul class="necessary-skills">
+  `
+  for (let i = 0; i < item.necessaryskills.length; i++) {
+    contentJobHTML += `
+    <li>• ${item.necessaryskills[i]}</li>
+    `
+  } 
+  contentJobHTML +=
+  `
+  </ul>
+  <h4>Tecnologías deseables:</h4>
+  <ul class="deseable-skills">`
+  for (let i = 0; i < item.deseableskills.length; i++) {
+    contentJobHTML += `
+    <li> • ${item.deseableskills[i]}</li>
+  `
+  } 
+  contentJobHTML +=
+  `</ul>
+</div>`
+
+}  jobsContentDetail.innerHTML = contentJobHTML;
+setTimeout(() => 1000);})
+
 
 
 
