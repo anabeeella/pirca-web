@@ -27,6 +27,9 @@ header {
     
     .main-title {
         max-width: 70%;
+        h1 {
+            font: 100 54px/58px "Work Sans", Verdana, sans-serif;
+        }
     }
 
     &:after {
@@ -36,8 +39,8 @@ header {
         width: 100%;
         background: url(/assets/bg-main.png) no-repeat right bottom;
         background-size: cover;
-        bottom: -276px;
-        left: 140px;
+        bottom: -30vh;
+        left: 50vw;
     }
 }
 
@@ -120,6 +123,10 @@ section {
     display: grid;
     grid-template-columns: 0 auto 0;
     grid-template-rows: auto 1fr;
+    img {
+        height: 50vh;
+        object-fit: none;
+    }
     .slider__control{
         grid-column-start: 2;
         grid-row-start: 2;
@@ -149,6 +156,11 @@ footer {
     display: flex;
     flex-direction: column;
 
+    .footer-nav {
+        @include display(flex, inherit, flex-start);
+        flex-direction: column;
+    }
+
     nav {
         font-size: 24px;
         padding: $xl-size 0;
@@ -158,33 +170,34 @@ footer {
             align-content: flex-start;
             flex-direction: column;
             max-height: 148px;
-            flex-wrap: wrap;
+            padding-inline-start: 0px;
+            margin-bottom: $md-size;
         }
 
         li {
-            font-size: $lg-size;
+            font-size: $md-size;
             font-weight: 600;
             padding: $xs-size $lg-size;
-        }
-    }
-    
-    div {
-        @include display(flex, space-between, center);
-        margin-bottom: $sm-size;
-
-        .material-icons {
-            padding: $xs-size;
         }
     }
 
     p {
         font-size: 16px;
+        line-height: 22px;
     }
 
-    .contact-links a {
+    .contact-links {
+        @include display(flex, flex-start, center);
+        
+        a {
         @include display(flex, center, center);
-        padding-left: $sm-size;
-    }
+
+        padding: $lg-size $md-size $lg-size 0;
+        
+        span {
+            padding: $xs-size;
+        }
+    }}
 }
 
 
@@ -284,13 +297,14 @@ footer {
     }
 }
 
+/*Esto se va a modificar cuando se arregle el js*/
 .job-details__2, .job-details__3 {
     display: none;
 }
 
 
 .team {
-    @include display(flex, inherit, inherit);
+    @include display(flex, inherit, flex-start);
     flex-direction: row;
     flex-wrap: wrap;
 
@@ -299,8 +313,7 @@ footer {
         flex-direction: column;
         text-align: center;
         padding: $sm-size;
-        max-width: 50%;
-        min-width: 25%;
+        width: 50%;
         img {
             width: 120px;
         }
@@ -323,11 +336,15 @@ footer {
     &-detail {
         img {
             margin-bottom: $sm-size;
-            max-width: 60vw;
+            max-width: 100vw;
         }
         h4 {
             font-weight: 400;
-            margin-bottom: $xl-size;
+            margin-bottom: $md-size;
+        }
+        p {
+            font-size: 18px;
+            line-height: 22px;
         }
     }
     &-text {
@@ -378,7 +395,7 @@ footer {
     padding: $lg-size;
 
     img {
-        padding: $xl-size;
+        padding: $md-size $lg-size;
     }
 }
 
@@ -393,18 +410,13 @@ footer {
 
 */
 
+
 @media (min-width: $break-sm) {
-header {
-    &:after {
-        height: 100%;
-        width: 100%;
-        bottom: -400px;
-        left: 100px;
+    .team__card {
+        width: 33%;
     }
 }
-}
 
-/* En el medio de estos dos breakpoints las imágenes de "Casos" se borran*/
 
 @media (min-width: $break-md) {
     section {
@@ -415,16 +427,26 @@ header {
         .main-title{
             width: 40%;
             padding-left: 120px;
+
+            h1 {
+            font: 100 62px/64px "Work Sans", Verdana, sans-serif;
+            }
         }
+
         .moving-auto-down{
         font-size: 40px;
         }
+
         &:after {
             height: 120%;
             width: 100%;
-            bottom: -440px;
-            left: 200px;
+            bottom: -30vw;
+            left: 30vw;
         }
+    }
+
+    .team__card {
+        width: 25%;
     }
 
     .texto-pirca{
@@ -440,7 +462,16 @@ header {
             display: inherit;
             margin: auto $xl-size;
         }
+        img {
+            object-fit: cover;
+        }
     }
+
+    .cases-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
 
     #job-content {
         margin: 0 auto 0 80px;
@@ -460,6 +491,10 @@ header {
         }
     }
     }
+    .img-group img {
+        padding: $lg-size;
+    }
+
 }
 
 
@@ -469,8 +504,8 @@ header {
     header {
         &:after {
         height: 140%;
-        bottom: -500px;
-        left: 100px;
+        bottom: -30vw;
+        left:0vw;
     }
 }
 

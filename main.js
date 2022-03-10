@@ -104,27 +104,39 @@ setTimeout(() => 1000);})
 var projects = [ 
     {
         "id": 1,
-        "title": "Voto electrónico",
-        "company": "Cámara de Senadores de la República Argentina",
-        "description": ""
+        "title": "Undermoilen",
+        "company": "Mobile App",
+        "description": "Undermoilen es una comunidad privada por invitación entre sus usuarios, para conectar amigos y amigos de amigos mientras viajas por el mundo."
     },
     {
         "id": 2,
-        "title": "Sistema de automatización de Radio",
-        "company": "Insoft Radio",
-        "description": ""
+        "title": "Matchup",
+        "company": "Smart e-market",
+        "description": "El primer smart e-market global dedicado a vincular e involucrar a estudiantes e instituciones educativas."
     },
     {
         "id": 3,
-        "title": "Audio guía con geo-posicionamiento",
-        "company": "Cementerio de la Recoleta",
-        "description": ""
+        "title": "Fan Fest",
+        "company": "Mobile App",
+        "description": "Vive la experiencia de estar en la tribuna. Los jugadores no están solos. El fútbol no está solo."
     },
     {
         "id": 4,
-        "title": "Consultoría",
-        "company": "TEDx Río de La Plata",
-        "description": ""
+        "title": "Insoft Radio",
+        "company": "Sistema de automatización de radio",
+        "description": "Insoft te permite manejar temas musicales, comerciales, efectos y mucho más, desde cualquier tipo de dispositivo y desde cualquier lugar. Con Insoft, la automatización de radio nunca volverá a ser la misma."
+    },
+    {
+        "id": 5,
+        "title": "Cámara de Senadores de la Nación Argentina",
+        "company": "Consultoría",
+        "description": "En este proyecto desafiante hemos implementado una gran cantidad de tecnologia, integración con sistemas de audio, lectura de huellas, replicación de información en tiempo real, sistemas de fault back."
+    },
+    {
+        "id": 6,
+        "title": "TEDx",
+        "company": "Consultoría",
+        "description": "Los congresos TEDx son actos sin ánimo de lucro basados en licencias TED donde se tratan temas principalmente sobre Tecnología, Entretenimiento, Diseño. Participamos en diferentes ediciones del TEDxRiodelaPlata brindando nuestro conocimiento en la dirección técnica del evento."
     }
 ]
 
@@ -133,11 +145,11 @@ var casesContent = document.getElementById('slider-cases-content');
 for(item of projects){
     casesContent.innerHTML += `                
     <div class="cases-detail mySlides">
-        <img src="assets/${item.id}.JPG">
+        <img src="assets/cases/${item.id}.JPG">
         <div class="cases-text">
           <h3>${item.title}</h3>
           <h4>${item.company}</h4>
-        <button class="btn btn__label">+ Ver más</button>
+          <p>${item.description}</p>
         </div>
     </div>
 `
