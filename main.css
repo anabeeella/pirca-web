@@ -370,7 +370,7 @@ footer .footer-nav {
 
 footer nav {
   font-size: 24px;
-  padding: 40px 0;
+  padding: 16px;
 }
 
 footer nav ul {
@@ -392,13 +392,13 @@ footer nav ul {
   max-height: 148px;
   -webkit-padding-start: 0px;
           padding-inline-start: 0px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 footer nav li {
   font-size: 24px;
   font-weight: 600;
-  padding: 4px 32px;
+  padding: 4px 0;
 }
 
 footer p {
@@ -410,12 +410,16 @@ footer .contact-links {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-right: 24px;
+  margin-bottom: 32px;
 }
 
 footer .contact-links a {
@@ -428,7 +432,7 @@ footer .contact-links a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 32px 24px 32px 0;
+  padding-right: 16px;
 }
 
 footer .contact-links a span {
@@ -757,9 +761,6 @@ footer .contact-links a span {
 }
 
 @media (min-width: 960px) {
-  section {
-    padding-bottom: 32px;
-  }
   header .main-title {
     width: 40%;
     padding-left: 120px;
@@ -776,8 +777,8 @@ footer .contact-links a span {
     bottom: -30vw;
     left: 30vw;
   }
-  .team__card {
-    width: 25%;
+  section {
+    padding-bottom: 32px;
   }
   .texto-pirca {
     max-width: 75%;
@@ -809,6 +810,9 @@ footer .contact-links a span {
   #job-content {
     margin: 0 auto 0 80px;
   }
+  .img-group img {
+    padding: 32px;
+  }
   .services__cards-item {
     max-width: 25%;
     padding: 32px;
@@ -821,8 +825,36 @@ footer .contact-links a span {
     width: 80px;
     margin-bottom: 16px;
   }
-  .img-group img {
-    padding: 32px;
+  .team__card {
+    width: 25%;
+  }
+  footer p {
+    text-align: right;
+  }
+  footer .footer-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  footer .footer-nav img {
+    padding: 24px;
+  }
+  footer .footer-nav a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-right: 0;
+    padding-left: 16px;
   }
 }
 
@@ -836,13 +868,10 @@ footer .contact-links a span {
     padding-left: 120px;
   }
   .texto-pirca {
-    max-width: 60%;
+    padding: 16px 120px;
   }
   #services p {
     font: 100 18px/22px "Work Sans", Verdana, sans-serif;
-  }
-  #joinus .joinus p {
-    padding-left: 120px;
   }
   .services__cards {
     padding: 0 120px;
@@ -850,8 +879,8 @@ footer .contact-links a span {
   .team {
     max-width: 80%;
   }
-  .texto-pirca {
-    padding: 16px 120px;
+  #joinus .joinus p {
+    padding-left: 120px;
   }
 }
 /*# sourceMappingURL=main.css.map */

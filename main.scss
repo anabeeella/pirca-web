@@ -163,7 +163,7 @@ footer {
 
     nav {
         font-size: 24px;
-        padding: $xl-size 0;
+        padding: $sm-size;
 
         ul {
             @include display(flex, inherit, flex-start);
@@ -171,13 +171,13 @@ footer {
             flex-direction: column;
             max-height: 148px;
             padding-inline-start: 0px;
-            margin-bottom: $md-size;
+            margin-bottom: $xl-size;
         }
 
         li {
             font-size: $md-size;
             font-weight: 600;
-            padding: $xs-size $lg-size;
+            padding: $xs-size 0;
         }
     }
 
@@ -187,13 +187,15 @@ footer {
     }
 
     .contact-links {
-        @include display(flex, flex-start, center);
+        @include display(flex, flex-end, center);
+        flex-wrap: wrap;
+        padding-right: $md-size;
+        margin-bottom: $lg-size;
         
         a {
         @include display(flex, center, center);
+        padding-right: $sm-size;
 
-        padding: $lg-size $md-size $lg-size 0;
-        
         span {
             padding: $xs-size;
         }
@@ -419,24 +421,21 @@ footer {
 
 
 @media (min-width: $break-md) {
-    section {
-        padding-bottom: $lg-size;
-    }
-
+    
     header {
         .main-title{
             width: 40%;
             padding-left: 120px;
-
+            
             h1 {
-            font: 100 62px/64px "Work Sans", Verdana, sans-serif;
+                font: 100 62px/64px "Work Sans", Verdana, sans-serif;
             }
         }
-
+        
         .moving-auto-down{
-        font-size: 40px;
+            font-size: 40px;
         }
-
+        
         &:after {
             height: 120%;
             width: 100%;
@@ -445,14 +444,14 @@ footer {
         }
     }
 
-    .team__card {
-        width: 25%;
+    section {
+        padding-bottom: $lg-size;
     }
-
+    
     .texto-pirca{
         max-width: 75%;
     }
-
+    
     #cases-content {
         grid-template-columns: auto auto auto;
         .prev, .next{
@@ -466,33 +465,60 @@ footer {
             object-fit: cover;
         }
     }
-
+    
     .cases-detail {
         display: flex;
         flex-direction: column;
     }
-
-
+    
     #job-content {
         margin: 0 auto 0 80px;
     }
-
+    
+    .img-group img {
+            padding: $lg-size;
+    }
+    
     .services__cards {
         &-item {
-        max-width: 25%;
-        padding: $lg-size;
-        h3 {
-            font-size: 28px;
-            margin-bottom: $sm-size;
+            max-width: 25%;
+            padding: $lg-size;
+            h3 {
+                font-size: 28px;
+                margin-bottom: $sm-size;
+            }
+            img {
+                width: 80px;
+                margin-bottom: $sm-size;
+            }
         }
+    }
+    
+    .team__card {
+            width: 25%;
+    }
+
+    footer {
+
+        p {
+            text-align: right;
+        }
+
+        .footer-nav {
+        flex-direction: row;
+        justify-content: space-between;
+
         img {
-            width: 80px;
-            margin-bottom: $sm-size;
+            padding: $md-size;
+        }
+        
+        a {
+            @include display(flex, center, center);
+            padding-right: 0;
+            padding-left: $sm-size;
         }
     }
-    }
-    .img-group img {
-        padding: $lg-size;
+
     }
 
 }
@@ -500,45 +526,42 @@ footer {
 
 
 @media (min-width: $break-lg) {
-
+    
     header {
         &:after {
-        height: 140%;
-        bottom: -30vw;
-        left:0vw;
+            height: 140%;
+            bottom: -30vw;
+            left:0vw;
+        }
     }
-}
 
     section {
         h2 {
             padding-left: 120px;
         }
     }
-
-    .texto-pirca{
-        max-width: 60%;
+    
+    .texto-pirca {
+        padding: $sm-size 120px;
     }
-
+    
     #services {
-    p {
+        p {
         font: 100 18px/22px $font-primary;
         }
+    }
+
+    .services__cards {
+        padding: 0 120px;
+    }
+    
+    .team {
+        max-width: 80%;
     }
 
     #joinus .joinus p {
             padding-left: 120px;
     }
 
-    .services__cards {
-        padding: 0 120px;
-    }
-
-    .team {
-        max-width: 80%;
-    }
-
-    .texto-pirca {
-        padding: $sm-size 120px;
-    }
 }
 
